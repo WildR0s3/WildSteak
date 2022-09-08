@@ -1,0 +1,22 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Recipes</h1>
+<a href="{% url 'new_recipe' %}"><button class="btn">Add new recipe</button></a>
+<table class="recipes">
+    <tr>
+        <th>Dish</th>
+        <th>Ingredient</th>
+        <th>Amount</th>
+    </tr>
+    <tr>
+        {% for item in reciperequirements_list %}
+    </tr>
+    <tr>
+        <td> {{ item.menu_item }} </td>
+        <td> {{ item.ingredient }} </td>
+        <td> {{ item.quantity }} </td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

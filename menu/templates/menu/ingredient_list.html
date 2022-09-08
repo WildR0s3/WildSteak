@@ -1,0 +1,28 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Inventory</h1>
+<a href="{% url 'new_ingredient' %}"><button class="btn">Add new ingredient</button></a>
+
+<table class="inventory">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Price</th>
+
+    </tr>
+    <tr>
+        {% for item in ingredient_list %}
+    </tr>
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.unit }}</td>
+        <td>{{ item.unit_price }}</td>
+        <td><a href="{% url 'ingredient_update' item.id %}">Edit</a></td>
+        <td><a href="{% url 'ingredient_delete' item.id %}">Delete</a></td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Purchases</h1>
+<h3>Total revenue:  {{ sum }}       </h3>
+<h3>Total cost:     {{ total_cost|floatformat:2 }}</h3>
+<h3>Profit:         {{ profit|floatformat:2 }}    </h3>
+<a href="{% url 'new_purchase' %}"><button class="btn">Register purchase</button></a>
+<table class="purchases">
+    <tr>
+        <th>Dish</th>
+        <th>Purchase time</th>
+
+    </tr>
+    <tr>
+        {% for item in purchase_list %}
+    </tr>
+    <tr>
+        <td>{{ item.menu_item }}</td>
+        <td>{{ item.date }}</td>
+        {% endfor %}
+
+    </tr>
+
+
+</table>
+{% endblock %}

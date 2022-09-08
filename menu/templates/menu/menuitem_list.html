@@ -1,0 +1,20 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Menu</h1>
+<a href="{% url 'new_item' %}"><button class="btn">Add menu item</button></a>
+<table class="menu">
+    <tr>
+        <th>Dish</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        {% for item in menuitem_list %}
+    </tr>
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.price }}</td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

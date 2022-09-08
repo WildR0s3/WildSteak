@@ -1,0 +1,12 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Delete ingredient</h1>
+<form action="" method="POST">
+    <div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Confirm"/>
+    </div>
+</form>
+{% endblock %}

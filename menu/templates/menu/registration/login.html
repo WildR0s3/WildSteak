@@ -1,0 +1,26 @@
+{% extends 'menu/base.html' %}
+{% block content %}
+<h3>Please login</h3>
+<form class="login" action="" method="POST">
+    <div class="login">
+        {% csrf_token %}
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter Username"/>
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password"/>
+        <input type="submit" value="Login"/>
+    </div>
+</form>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+<div class="loginfooter">
+<p>Haven't sign up yet?</p>
+<a href="{% url 'signup' %}">Sign up</a>
+</div>
+{% endblock %}
