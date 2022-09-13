@@ -155,3 +155,15 @@ li a {
   text-align: left;
 }
 
+.description li {
+  color: black;
+  float: none;
+  text-align: left;
+}
+
+.description h3 {
+  display: block;
+  top: ;
+  width: 1000px;
+}
+
